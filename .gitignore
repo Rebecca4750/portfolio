@@ -1,0 +1,7 @@
+# 本地辅助脚本与临时产物（不部署）
+*.py
+screenshots/
+_screenshot_industries.html
+_shot_hero.py
+dashboard_mosaic.png
+nav_images.zip
