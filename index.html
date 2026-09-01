@@ -1312,17 +1312,6 @@ body {
 .case-db-table .rank { font-weight: 800; color: #2563eb; }
 .case-db-table .num { font-weight: 700; color: #111827; }
 
-/* Case 2: Architecture SVG */
-.case-arch {
-  background: #fff;
-  border: 1.5px solid var(--border);
-  border-radius: var(--radius);
-  padding: 32px;
-  text-align: center;
-  overflow-x: auto;
-}
-.case-arch svg { max-width: 100%; height: auto; }
-
 /* Case 3: PRD Preview */
 .case-prd {
   background: #fff;
@@ -2490,7 +2479,6 @@ body {
   .kpi-product-row { grid-template-columns: repeat(2, 1fr); }
   .kpi-product-row-section-title { grid-column: 1 / -1; }
   .case-db-chart-row, .case-db-map-row { grid-template-columns: 1fr; }
-  .case-arch { padding: 16px; }
   .nav-links { display: none; }
   .contact-title { font-size: 22px; }
   .tab-nav { flex-wrap: wrap; width: 100%; }
@@ -3158,7 +3146,6 @@ body {
       <button class="case-tab active" onclick="switchCase('dashboard')">📊 数据看板</button>
       <button class="case-tab" onclick="switchCase('app-distribution')">📱 应用分发</button>
       <button class="case-tab" onclick="switchCase('visualization')">🖥️ 可视化大屏</button>
-      <button class="case-tab" onclick="switchCase('architecture')">🏗️ 数据架构</button>
       <button class="case-tab" onclick="switchCase('prd')">📋 PRD 文档</button>
       <button class="case-tab" onclick="switchCase('profile')">👤 用户画像</button>
     </div>
@@ -3438,73 +3425,7 @@ body {
       </div>
     </div>
 
-    <!-- Case 2: 数据架构 -->
-    <div class="case-content fade-up" id="case-architecture">
-      <div class="case-arch">
-        <svg viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px">
-          <defs>
-            <marker id="aUp" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M0,10 L5,0 L10,10 Z" fill="#3b82f6"/></marker>
-          </defs>
-          <rect width="720" height="460" rx="12" fill="var(--bg)"/>
-
-          <!-- L1 数据应用层 -->
-          <rect x="20" y="16" width="680" height="64" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
-          <rect x="20" y="16" width="5" height="64" rx="2" fill="#3b82f6"/>
-          <text x="360" y="40" text-anchor="middle" font-family="Inter,sans-serif" font-size="15" font-weight="800" fill="#1e293b">数据应用层</text>
-          <rect x="26" y="50" width="120" height="24" rx="4" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/><text x="86" y="66" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="700" fill="#475569">经营分析看板</text>
-          <rect x="160" y="50" width="120" height="24" rx="4" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/><text x="220" y="66" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="700" fill="#475569">用户画像平台</text>
-          <rect x="294" y="50" width="120" height="24" rx="4" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/><text x="354" y="66" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="700" fill="#475569">实时监控大屏</text>
-          <rect x="428" y="50" width="120" height="24" rx="4" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/><text x="488" y="66" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="700" fill="#475569">智能预警中心</text>
-          <rect x="562" y="50" width="120" height="24" rx="4" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/><text x="622" y="66" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="700" fill="#475569">数据 API 服务</text>
-          <line x1="360" y1="104" x2="360" y2="82" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#aUp)"/>
-
-          <!-- L2 数据仓库层 -->
-          <rect x="20" y="104" width="680" height="64" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
-          <rect x="20" y="104" width="5" height="64" rx="2" fill="#3b82f6"/>
-          <text x="360" y="128" text-anchor="middle" font-family="Inter,sans-serif" font-size="15" font-weight="800" fill="#1e293b">数据仓库层</text>
-          <rect x="26" y="138" width="155" height="24" rx="4" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/><text x="103.5" y="154" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#475569">ODS 贴源层</text>
-          <rect x="195" y="138" width="155" height="24" rx="4" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/><text x="272.5" y="154" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#475569">DWD 明细层</text>
-          <rect x="364" y="138" width="155" height="24" rx="4" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/><text x="441.5" y="154" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#475569">DWS 汇总层</text>
-          <rect x="533" y="138" width="155" height="24" rx="4" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/><text x="610.5" y="154" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#475569">ADS 应用层</text>
-          <line x1="360" y1="192" x2="360" y2="170" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#aUp)"/>
-
-          <!-- L3 数据计算与存储层 -->
-          <rect x="20" y="192" width="680" height="64" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
-          <rect x="20" y="192" width="5" height="64" rx="2" fill="#3b82f6"/>
-          <text x="360" y="216" text-anchor="middle" font-family="Inter,sans-serif" font-size="15" font-weight="800" fill="#1e293b">数据计算与存储层</text>
-          <rect x="26" y="226" width="120" height="24" rx="4" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/><text x="86" y="242" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="700" fill="#475569">Hadoop HDFS</text>
-          <rect x="160" y="226" width="120" height="24" rx="4" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/><text x="220" y="242" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="700" fill="#475569">Apache Spark</text>
-          <rect x="294" y="226" width="120" height="24" rx="4" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/><text x="354" y="242" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="700" fill="#475569">Apache Flink</text>
-          <rect x="428" y="226" width="120" height="24" rx="4" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/><text x="488" y="242" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="700" fill="#475569">Apache Kafka</text>
-          <rect x="562" y="226" width="120" height="24" rx="4" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/><text x="622" y="242" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="700" fill="#475569">Apache Hive</text>
-          <line x1="360" y1="280" x2="360" y2="258" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#aUp)"/>
-
-          <!-- L4 数据治理层 -->
-          <rect x="20" y="280" width="680" height="64" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
-          <rect x="20" y="280" width="5" height="64" rx="2" fill="#3b82f6"/>
-          <text x="360" y="304" text-anchor="middle" font-family="Inter,sans-serif" font-size="15" font-weight="800" fill="#1e293b">数据治理层</text>
-          <rect x="26" y="314" width="120" height="24" rx="4" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/><text x="86" y="330" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="700" fill="#475569">数据清洗 &amp; ETL</text>
-          <rect x="160" y="314" width="120" height="24" rx="4" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/><text x="220" y="330" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="700" fill="#475569">数据标准管理</text>
-          <rect x="294" y="314" width="120" height="24" rx="4" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/><text x="354" y="330" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="700" fill="#475569">数据质量监控</text>
-          <rect x="428" y="314" width="120" height="24" rx="4" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/><text x="488" y="330" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="700" fill="#475569">主数据管理</text>
-          <rect x="562" y="314" width="120" height="24" rx="4" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/><text x="622" y="330" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="700" fill="#475569">元数据管理</text>
-          <line x1="360" y1="368" x2="360" y2="346" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#aUp)"/>
-
-          <!-- L5 数据源层 -->
-          <rect x="20" y="368" width="680" height="64" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
-          <rect x="20" y="368" width="5" height="64" rx="2" fill="#3b82f6"/>
-          <text x="360" y="392" text-anchor="middle" font-family="Inter,sans-serif" font-size="15" font-weight="800" fill="#1e293b">数据源层</text>
-          <rect x="26" y="402" width="100" height="24" rx="4" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/><text x="76" y="418" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="700" fill="#475569">端侧 SDK</text>
-          <rect x="138" y="402" width="100" height="24" rx="4" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/><text x="188" y="418" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="700" fill="#475569">云侧 API</text>
-          <rect x="250" y="402" width="100" height="24" rx="4" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/><text x="300" y="418" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="700" fill="#475569">业务数据库</text>
-          <rect x="362" y="402" width="100" height="24" rx="4" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/><text x="412" y="418" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="700" fill="#475569">埋点日志</text>
-          <rect x="474" y="402" width="100" height="24" rx="4" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/><text x="524" y="418" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="700" fill="#475569">第三方 API</text>
-          <rect x="586" y="402" width="100" height="24" rx="4" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/><text x="636" y="418" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="700" fill="#475569">手工填报</text>
-        </svg>
-      </div>
-    </div>
-
-    <!-- Case 3: PRD 文档 -->
+    <!-- Case 2: PRD 文档 -->
     <div class="case-content fade-up" id="case-prd">
       <div class="case-prd">
         <div class="case-prd-header">
@@ -3535,7 +3456,7 @@ body {
       </div>
     </div>
 
-    <!-- Case 4: 用户画像与评估体系 -->
+    <!-- Case 3: 用户画像与评估体系 -->
     <div class="case-content fade-up" id="case-profile">
       <div class="profile-case">
         <!-- 6维标签体系 -->
@@ -3704,7 +3625,7 @@ body {
       </div>
     </div>
 
-    <!-- Case 5: 应用分发全链路数据 -->
+    <!-- Case 4: 应用分发全链路数据 -->
     <div class="case-content fade-up" id="case-app-distribution">
       <div class="app-dist-case">
         <!-- 代表案例聚焦头 -->
@@ -4018,7 +3939,7 @@ body {
       </div>
     </div>
 
-    <!-- Case 6: 可视化大屏作品集 -->
+    <!-- Case 5: 可视化大屏作品集 -->
     <div class="case-content fade-up" id="case-visualization">
       <div class="viz-screen-case">
         <!-- 大屏 1: 省级监测大屏 -->
